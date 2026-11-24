@@ -1,4 +1,4 @@
-# Escolaris
+# Projeto - Escolaris
 
 > Portal escolar web para alunos, professores e gestão.
 > Projeto pessoal de treino full-stack: Java + Spring Boot (back-end), Angular/TypeScript (front-end) e Figma (design).
