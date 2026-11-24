@@ -89,4 +89,4 @@ jobs:
         run: npm run build
 
       - name: Testes
-        run: npm test -- --no-watch --no-progress --browsers=ChromeHeadless
+        run: npm test -- --no-watch --no-progress
