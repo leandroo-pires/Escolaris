@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 15
     defaults:
       run:
-        working-directory: back-end
+        working-directory: back-end/escolarisapi
 
     services:
       postgres:
@@ -62,7 +62,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: backend-test-reports
-          path: back-end/target/surefire-reports
+          path: back-end/escolarisapi/target/surefire-reports
           if-no-files-found: ignore
 
   frontend:
@@ -71,7 +71,7 @@ jobs:
     timeout-minutes: 15
     defaults:
       run:
-        working-directory: front-end
+        working-directory: front-end/escolarisapp
 
     steps:
       - uses: actions/checkout@v4
@@ -80,7 +80,7 @@ jobs:
         with:
           node-version: "22"
           cache: npm
-          cache-dependency-path: front-end/package-lock.json
+          cache-dependency-path: front-end/escolarisapp/package-lock.json
 
       - name: Instalar dependências
         run: npm ci
@@ -89,4 +89,4 @@ jobs:
         run: npm run build
 
       - name: Testes
-        run: npm test -- --no-watch --no-progress --browsers=ChromeHeadless
+        run: npm test -- --no-watch --no-progress
